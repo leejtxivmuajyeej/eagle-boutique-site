@@ -10,12 +10,9 @@ export default function Home() {
 
   return (
     <main style={{ fontFamily: "Arial, sans-serif", background: "#f6f1e8", color: "#111" }}>
-      <nav style={{
-        display: "flex", justifyContent: "space-between", alignItems: "center",
-        padding: "22px 8%", background: "#0f0f0f", color: "white"
-      }}>
+      <nav style={nav}>
         <strong style={{ fontSize: "20px", color: "#d4af37" }}>EAGLE INTERNATIONAL</strong>
-        <div style={{ display: "flex", gap: "22px", fontSize: "14px" }}>
+        <div style={navLinks}>
           <a href="#about" style={link}>About</a>
           <a href="#products" style={link}>Products</a>
           <a href="#services" style={link}>Services</a>
@@ -23,19 +20,15 @@ export default function Home() {
         </div>
       </nav>
 
-      <section style={{
-        minHeight: "520px", display: "flex", alignItems: "center", justifyContent: "center",
-        textAlign: "center", padding: "70px 8%",
-        background: "linear-gradient(135deg, #050505, #241b10, #000)", color: "white"
-      }}>
+      <section style={hero}>
         <div style={{ maxWidth: "950px" }}>
           <p style={{ color: "#d4af37", letterSpacing: "3px", fontWeight: "bold" }}>
             GLOBAL SOURCING • IMPORT • EXPORT
           </p>
-          <h1 style={{ fontSize: "58px", lineHeight: "1.1", margin: "18px 0" }}>
+          <h1 style={heroTitle}>
             Eagle International Import & Export LLC
           </h1>
-          <p style={{ fontSize: "21px", color: "#e8e0d2", lineHeight: "1.6", marginBottom: "34px" }}>
+          <p style={heroText}>
             Connecting premium agricultural, wellness, beauty, and specialty products to global markets.
           </p>
           <a href="#contact" style={button}>Request a Quote</a>
@@ -55,12 +48,7 @@ export default function Home() {
       <section id="products" style={section}>
         <p style={goldSmall}>PRODUCTS & SERVICES</p>
         <h2 style={heading}>What We Offer</h2>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: "24px",
-          marginTop: "35px"
-        }}>
+        <div style={grid}>
           {products.map((item) => (
             <div key={item.title} style={card}>
               <div style={imageBox}></div>
@@ -71,12 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" style={{
-        padding: "80px 8%",
-        background: "#111",
-        color: "white",
-        textAlign: "center"
-      }}>
+      <section id="services" style={darkSection}>
         <p style={goldSmall}>WHY WORK WITH US</p>
         <h2 style={{ ...heading, color: "white" }}>Professional. Reliable. Global.</h2>
         <p style={{ ...paragraph, color: "#ddd", margin: "0 auto" }}>
@@ -92,64 +75,88 @@ export default function Home() {
           For product sourcing, wholesale inquiries, import/export support, or partnership opportunities,
           contact Eagle International Import & Export LLC.
         </p>
-        <div style={{
-          marginTop: "30px",
-          padding: "30px",
-          background: "white",
-          borderRadius: "22px",
-          boxShadow: "0 12px 30px rgba(0,0,0,0.08)"
-        }}>
+
+        <div style={contactBox}>
           <p><strong>Company:</strong> Eagle International Import & Export LLC</p>
           <p><strong>Location:</strong> Georgia, USA</p>
-          <p><strong>Email:</strong> your-email@example.com</p>
-            <p>
-  <strong>WhatsApp:</strong>{" "}
-  <a
-    href="https://wa.me/12094870789"
-    target="_blank"
-    style={{ color: "#b68b1d" }}
-  >
-    +1 (209) 487-0789
-  </a>
-</p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:info@eagleinternationalimportexport.com" style={goldLink}>
+              info@eagleinternationalimportexport.com
+            </a>
+          </p>
+          <p>
+            <strong>WhatsApp:</strong>{" "}
+            <a
+              href="https://wa.me/12094870789"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={goldLink}
+            >
+              +1 (209) 487-0789
+            </a>
+          </p>
         </div>
       </section>
-      <a
-  href="https://wa.me/12094870789"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    position: "fixed",
-    right: "22px",
-    bottom: "22px",
-    background: "#25D366",
-    color: "white",
-    padding: "14px 20px",
-    borderRadius: "999px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.25)",
-    zIndex: 999
-  }}
->
-  WhatsApp Us
-</a>
 
-      <footer style={{
-        background: "#050505",
-        color: "#aaa",
-        textAlign: "center",
-        padding: "28px"
-      }}>
+      <a
+        href="https://wa.me/12094870789"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={whatsappButton}
+      >
+        WhatsApp Us
+      </a>
+
+      <footer style={footer}>
         © 2026 Eagle International Import & Export LLC. All Rights Reserved.
       </footer>
     </main>
   );
 }
 
+const nav = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "22px 8%",
+  background: "#0f0f0f",
+  color: "white"
+};
+
+const navLinks = {
+  display: "flex",
+  gap: "22px",
+  fontSize: "14px"
+};
+
 const link = {
   color: "white",
   textDecoration: "none"
+};
+
+const hero = {
+  minHeight: "520px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  textAlign: "center",
+  padding: "70px 8%",
+  background: "linear-gradient(135deg, #050505, #241b10, #000)",
+  color: "white"
+};
+
+const heroTitle = {
+  fontSize: "58px",
+  lineHeight: "1.1",
+  margin: "18px 0"
+};
+
+const heroText = {
+  fontSize: "21px",
+  color: "#e8e0d2",
+  lineHeight: "1.6",
+  marginBottom: "34px"
 };
 
 const button = {
@@ -187,6 +194,13 @@ const paragraph = {
   maxWidth: "850px"
 };
 
+const grid = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+  gap: "24px",
+  marginTop: "35px"
+};
+
 const card = {
   background: "white",
   padding: "24px",
@@ -200,4 +214,46 @@ const imageBox = {
   borderRadius: "18px",
   background: "linear-gradient(135deg, #eee, #d8caa8)",
   marginBottom: "20px"
+};
+
+const darkSection = {
+  padding: "80px 8%",
+  background: "#111",
+  color: "white",
+  textAlign: "center"
+};
+
+const contactBox = {
+  marginTop: "30px",
+  padding: "30px",
+  background: "white",
+  borderRadius: "22px",
+  boxShadow: "0 12px 30px rgba(0,0,0,0.08)"
+};
+
+const goldLink = {
+  color: "#b68b1d",
+  textDecoration: "none",
+  fontWeight: "bold"
+};
+
+const whatsappButton = {
+  position: "fixed",
+  right: "22px",
+  bottom: "22px",
+  background: "#25D366",
+  color: "white",
+  padding: "14px 20px",
+  borderRadius: "999px",
+  textDecoration: "none",
+  fontWeight: "bold",
+  boxShadow: "0 8px 25px rgba(0,0,0,0.25)",
+  zIndex: 999
+};
+
+const footer = {
+  background: "#050505",
+  color: "#aaa",
+  textAlign: "center",
+  padding: "28px"
 };
