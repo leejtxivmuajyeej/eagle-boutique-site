@@ -102,8 +102,38 @@ export default function Home() {
           <p><strong>Company:</strong> Eagle International Import & Export LLC</p>
           <p><strong>Location:</strong> Georgia, USA</p>
           <p><strong>Email:</strong> your-email@example.com</p>
+            <p>
+  <strong>WhatsApp:</strong>{" "}
+  <a
+    href="https://wa.me/12094870789"
+    target="_blank"
+    style={{ color: "#b68b1d" }}
+  >
+    +1 (209) 487-0789
+  </a>
+</p>
         </div>
       </section>
+      <a
+  href="https://wa.me/12094870789"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    position: "fixed",
+    right: "22px",
+    bottom: "22px",
+    background: "#25D366",
+    color: "white",
+    padding: "14px 20px",
+    borderRadius: "999px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    boxShadow: "0 8px 25px rgba(0,0,0,0.25)",
+    zIndex: 999
+  }}
+>
+  WhatsApp Us
+</a>
 
       <footer style={{
         background: "#050505",
