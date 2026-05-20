@@ -10,8 +10,17 @@ export default function Home() {
 
   return (
     <main style={{ fontFamily: "Arial, sans-serif", background: "#f6f1e8", color: "#111" }}>
+
       <nav style={nav}>
-        <strong style={{ fontSize: "20px", color: "#d4af37" }}>EAGLE INTERNATIONAL</strong>
+        <img
+          src="https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png"
+          alt="Eagle International Logo"
+          style={{
+            height: "75px",
+            objectFit: "contain"
+          }}
+        />
+
         <div style={navLinks}>
           <a href="#about" style={link}>About</a>
           <a href="#products" style={link}>Products</a>
@@ -25,19 +34,28 @@ export default function Home() {
           <p style={{ color: "#d4af37", letterSpacing: "3px", fontWeight: "bold" }}>
             GLOBAL SOURCING • IMPORT • EXPORT
           </p>
+
           <h1 style={heroTitle}>
             Eagle International Import & Export LLC
           </h1>
+
           <p style={heroText}>
             Connecting premium agricultural, wellness, beauty, and specialty products to global markets.
           </p>
-          <a href="#contact" style={button}>Request a Quote</a>
+
+          <a href="#contact" style={button}>
+            Request a Quote
+          </a>
         </div>
       </section>
 
       <section id="about" style={section}>
         <p style={goldSmall}>ABOUT OUR COMPANY</p>
-        <h2 style={heading}>Trusted Global Trade Partner</h2>
+
+        <h2 style={heading}>
+          Trusted Global Trade Partner
+        </h2>
+
         <p style={paragraph}>
           Eagle International Import & Export LLC is a USA-based company specializing in sourcing,
           importing, exporting, and distributing quality products across international markets.
@@ -47,13 +65,23 @@ export default function Home() {
 
       <section id="products" style={section}>
         <p style={goldSmall}>PRODUCTS & SERVICES</p>
-        <h2 style={heading}>What We Offer</h2>
+
+        <h2 style={heading}>
+          What We Offer
+        </h2>
+
         <div style={grid}>
           {products.map((item) => (
             <div key={item.title} style={card}>
               <div style={imageBox}></div>
-              <h3 style={{ fontSize: "22px", marginBottom: "10px" }}>{item.title}</h3>
-              <p style={{ color: "#555", lineHeight: "1.6" }}>{item.text}</p>
+
+              <h3 style={{ fontSize: "22px", marginBottom: "10px" }}>
+                {item.title}
+              </h3>
+
+              <p style={{ color: "#555", lineHeight: "1.6" }}>
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
@@ -61,7 +89,11 @@ export default function Home() {
 
       <section id="services" style={darkSection}>
         <p style={goldSmall}>WHY WORK WITH US</p>
-        <h2 style={{ ...heading, color: "white" }}>Professional. Reliable. Global.</h2>
+
+        <h2 style={{ ...heading, color: "white" }}>
+          Professional. Reliable. Global.
+        </h2>
+
         <p style={{ ...paragraph, color: "#ddd", margin: "0 auto" }}>
           We help connect suppliers, buyers, and logistics partners with a focus on quality,
           trust, clear communication, product sourcing, and international business growth.
@@ -70,21 +102,35 @@ export default function Home() {
 
       <section id="contact" style={section}>
         <p style={goldSmall}>CONTACT</p>
-        <h2 style={heading}>Let’s Build Business Together</h2>
+
+        <h2 style={heading}>
+          Let’s Build Business Together
+        </h2>
+
         <p style={paragraph}>
           For product sourcing, wholesale inquiries, import/export support, or partnership opportunities,
           contact Eagle International Import & Export LLC.
         </p>
 
         <div style={contactBox}>
-          <p><strong>Company:</strong> Eagle International Import & Export LLC</p>
-          <p><strong>Location:</strong> Georgia, USA</p>
+          <p>
+            <strong>Company:</strong> Eagle International Import & Export LLC
+          </p>
+
+          <p>
+            <strong>Location:</strong> Georgia, USA
+          </p>
+
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:info@eagleinternationalimportexport.com" style={goldLink}>
+            <a
+              href="mailto:info@eagleinternationalimportexport.com"
+              style={goldLink}
+            >
               info@eagleinternationalimportexport.com
             </a>
           </p>
+
           <p>
             <strong>WhatsApp:</strong>{" "}
             <a
@@ -111,6 +157,7 @@ export default function Home() {
       <footer style={footer}>
         © 2026 Eagle International Import & Export LLC. All Rights Reserved.
       </footer>
+
     </main>
   );
 }
@@ -119,20 +166,24 @@ const nav = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "22px 8%",
+  padding: "20px 8%",
   background: "#0f0f0f",
-  color: "white"
+  color: "white",
+  position: "sticky",
+  top: 0,
+  zIndex: 100
 };
 
 const navLinks = {
   display: "flex",
-  gap: "22px",
-  fontSize: "14px"
+  gap: "24px",
+  fontSize: "15px"
 };
 
 const link = {
   color: "white",
-  textDecoration: "none"
+  textDecoration: "none",
+  fontWeight: "500"
 };
 
 const hero = {
