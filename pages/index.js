@@ -1,106 +1,173 @@
 export default function Home() {
   const products = [
-    "Premium Fresh Ginger",
-    "Specialty Rice Products",
-    "Wolffia Protein Supplements",
-    "Beauty & Wellness Products",
-    "Global Sourcing",
-    "Import & Export Logistics"
+    { title: "Fresh Ginger", text: "Premium agricultural sourcing for wholesale and international buyers." },
+    { title: "Specialty Rice", text: "Unique rice products from trusted Asian supply partners." },
+    { title: "Wolffia Protein", text: "Plant-based wellness and supplement product opportunities." },
+    { title: "Beauty Products", text: "Beauty, personal care, and wellness products for global markets." },
+    { title: "Import Services", text: "Support for sourcing, documentation, and international trade." },
+    { title: "Export Services", text: "Connecting quality products from the USA to overseas buyers." },
   ];
 
   return (
-    <main style={{
-      fontFamily: "Arial, sans-serif",
-      background: "#f7f4ef",
-      color: "#111",
-      minHeight: "100vh"
-    }}>
-      <section style={{
-        padding: "70px 40px",
-        background: "linear-gradient(135deg, #111 0%, #2b2118 100%)",
-        color: "white",
-        textAlign: "center"
+    <main style={{ fontFamily: "Arial, sans-serif", background: "#f6f1e8", color: "#111" }}>
+      <nav style={{
+        display: "flex", justifyContent: "space-between", alignItems: "center",
+        padding: "22px 8%", background: "#0f0f0f", color: "white"
       }}>
-        <h1 style={{ fontSize: "52px", marginBottom: "16px" }}>
-          Eagle International Import & Export LLC
-        </h1>
-        <p style={{ fontSize: "22px", maxWidth: "850px", margin: "0 auto 30px" }}>
-          Connecting premium agricultural, wellness, beauty, and specialty products to global markets.
-        </p>
-        <a href="#contact" style={{
-          background: "#c9a227",
-          color: "#111",
-          padding: "14px 26px",
-          borderRadius: "30px",
-          textDecoration: "none",
-          fontWeight: "bold"
-        }}>
-          Contact Us
-        </a>
+        <strong style={{ fontSize: "20px", color: "#d4af37" }}>EAGLE INTERNATIONAL</strong>
+        <div style={{ display: "flex", gap: "22px", fontSize: "14px" }}>
+          <a href="#about" style={link}>About</a>
+          <a href="#products" style={link}>Products</a>
+          <a href="#services" style={link}>Services</a>
+          <a href="#contact" style={link}>Contact</a>
+        </div>
+      </nav>
+
+      <section style={{
+        minHeight: "520px", display: "flex", alignItems: "center", justifyContent: "center",
+        textAlign: "center", padding: "70px 8%",
+        background: "linear-gradient(135deg, #050505, #241b10, #000)", color: "white"
+      }}>
+        <div style={{ maxWidth: "950px" }}>
+          <p style={{ color: "#d4af37", letterSpacing: "3px", fontWeight: "bold" }}>
+            GLOBAL SOURCING • IMPORT • EXPORT
+          </p>
+          <h1 style={{ fontSize: "58px", lineHeight: "1.1", margin: "18px 0" }}>
+            Eagle International Import & Export LLC
+          </h1>
+          <p style={{ fontSize: "21px", color: "#e8e0d2", lineHeight: "1.6", marginBottom: "34px" }}>
+            Connecting premium agricultural, wellness, beauty, and specialty products to global markets.
+          </p>
+          <a href="#contact" style={button}>Request a Quote</a>
+        </div>
       </section>
 
-      <section style={{ padding: "55px 40px", maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "16px" }}>About Our Company</h2>
-        <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#444" }}>
-          Eagle International Import & Export LLC is a USA-based company focused on sourcing,
+      <section id="about" style={section}>
+        <p style={goldSmall}>ABOUT OUR COMPANY</p>
+        <h2 style={heading}>Trusted Global Trade Partner</h2>
+        <p style={paragraph}>
+          Eagle International Import & Export LLC is a USA-based company specializing in sourcing,
           importing, exporting, and distributing quality products across international markets.
-          We work with agricultural goods, wellness products, beauty items, and specialty consumer products.
+          We focus on long-term relationships, reliable communication, and professional trade support.
         </p>
       </section>
 
-      <section style={{ padding: "40px", maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "25px" }}>Products & Services</h2>
+      <section id="products" style={section}>
+        <p style={goldSmall}>PRODUCTS & SERVICES</p>
+        <h2 style={heading}>What We Offer</h2>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "22px"
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gap: "24px",
+          marginTop: "35px"
         }}>
           {products.map((item) => (
-            <div key={item} style={{
-              background: "white",
-              padding: "28px",
-              borderRadius: "18px",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-              border: "1px solid #eee"
-            }}>
-              <h3 style={{ fontSize: "22px", marginBottom: "10px" }}>{item}</h3>
-              <p style={{ color: "#555", lineHeight: "1.6" }}>
-                Professional sourcing, supply, and trade support for domestic and international buyers.
-              </p>
+            <div key={item.title} style={card}>
+              <div style={imageBox}></div>
+              <h3 style={{ fontSize: "22px", marginBottom: "10px" }}>{item.title}</h3>
+              <p style={{ color: "#555", lineHeight: "1.6" }}>{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section style={{
-        padding: "55px 40px",
-        maxWidth: "1100px",
-        margin: "0 auto"
-      }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "16px" }}>Why Work With Us</h2>
-        <p style={{ fontSize: "18px", lineHeight: "1.7", color: "#444" }}>
-          We help connect suppliers, buyers, and logistics partners with a focus on trust,
-          product quality, professional communication, and long-term business relationships.
-        </p>
-      </section>
-
-      <section id="contact" style={{
-        padding: "60px 40px",
+      <section id="services" style={{
+        padding: "80px 8%",
         background: "#111",
         color: "white",
         textAlign: "center"
       }}>
-        <h2 style={{ fontSize: "36px", marginBottom: "15px" }}>Contact Us</h2>
-        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-          Eagle International Import & Export LLC
-        </p>
-        <p style={{ fontSize: "18px", color: "#d8c27a" }}>
-          Georgia, USA
-        </p>
-        <p style={{ fontSize: "18px" }}>
-          Email: your-email@example.com
+        <p style={goldSmall}>WHY WORK WITH US</p>
+        <h2 style={{ ...heading, color: "white" }}>Professional. Reliable. Global.</h2>
+        <p style={{ ...paragraph, color: "#ddd", margin: "0 auto" }}>
+          We help connect suppliers, buyers, and logistics partners with a focus on quality,
+          trust, clear communication, product sourcing, and international business growth.
         </p>
       </section>
+
+      <section id="contact" style={section}>
+        <p style={goldSmall}>CONTACT</p>
+        <h2 style={heading}>Let’s Build Business Together</h2>
+        <p style={paragraph}>
+          For product sourcing, wholesale inquiries, import/export support, or partnership opportunities,
+          contact Eagle International Import & Export LLC.
+        </p>
+        <div style={{
+          marginTop: "30px",
+          padding: "30px",
+          background: "white",
+          borderRadius: "22px",
+          boxShadow: "0 12px 30px rgba(0,0,0,0.08)"
+        }}>
+          <p><strong>Company:</strong> Eagle International Import & Export LLC</p>
+          <p><strong>Location:</strong> Georgia, USA</p>
+          <p><strong>Email:</strong> your-email@example.com</p>
+        </div>
+      </section>
+
+      <footer style={{
+        background: "#050505",
+        color: "#aaa",
+        textAlign: "center",
+        padding: "28px"
+      }}>
+        © 2026 Eagle International Import & Export LLC. All Rights Reserved.
+      </footer>
     </main>
   );
 }
+
+const link = {
+  color: "white",
+  textDecoration: "none"
+};
+
+const button = {
+  display: "inline-block",
+  background: "#d4af37",
+  color: "#111",
+  padding: "15px 30px",
+  borderRadius: "999px",
+  textDecoration: "none",
+  fontWeight: "bold"
+};
+
+const section = {
+  padding: "80px 8%",
+  maxWidth: "1200px",
+  margin: "0 auto"
+};
+
+const goldSmall = {
+  color: "#b68b1d",
+  fontWeight: "bold",
+  letterSpacing: "2px",
+  fontSize: "14px"
+};
+
+const heading = {
+  fontSize: "42px",
+  margin: "12px 0 18px"
+};
+
+const paragraph = {
+  fontSize: "18px",
+  lineHeight: "1.8",
+  color: "#444",
+  maxWidth: "850px"
+};
+
+const card = {
+  background: "white",
+  padding: "24px",
+  borderRadius: "22px",
+  boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+  border: "1px solid #eee"
+};
+
+const imageBox = {
+  height: "150px",
+  borderRadius: "18px",
+  background: "linear-gradient(135deg, #eee, #d8caa8)",
+  marginBottom: "20px"
+};
