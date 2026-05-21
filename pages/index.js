@@ -3,62 +3,37 @@ export default function Home() {
     {
       title: "Ginger Shampoo",
       text: "Luxury botanical ginger shampoo designed for scalp care, healthy-looking hair, and premium wellness beauty routines.",
-      image:
-        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
+      image: "https://i.postimg.cc/GpMJcCwx/Shampoo.jpg",
     },
     {
       title: "Herbal Toothpaste",
       text: "Premium herbal toothpaste inspired by natural wellness and daily oral care traditions.",
-      image:
-        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
+      image: "https://i.postimg.cc/25TL4F0z/Herbal-Toothpaste.jpg",
     },
     {
       title: "Wolffia Protein",
       text: "Plant-based superfood protein supplement crafted for wellness, nutrition, and healthy lifestyles.",
-      image:
-        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
+      image: "https://i.postimg.cc/TY8j20SL/wolffia.jpg",
     },
   ];
 
   return (
-    <main
-      style={{
-        fontFamily: "Arial, sans-serif",
-        background: "#f6f1e8",
-        color: "#111",
-      }}
-    >
-      {/* NAVBAR */}
+    <main style={{ fontFamily: "Arial, sans-serif", background: "#f6f1e8", color: "#111" }}>
       <nav style={nav}>
         <img
           src="https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png"
           alt="Eagle International Logo"
-          style={{
-            height: "90px",
-            objectFit: "contain",
-          }}
+          style={{ height: "90px", objectFit: "contain" }}
         />
 
         <div style={navLinks}>
-          <a href="#about" style={link}>
-            About
-          </a>
-
-          <a href="#products" style={link}>
-            Products
-          </a>
-
-          <a href="#services" style={link}>
-            Services
-          </a>
-
-          <a href="#contact" style={link}>
-            Contact
-          </a>
+          <a href="#about" style={link}>About</a>
+          <a href="#products" style={link}>Products</a>
+          <a href="#services" style={link}>Services</a>
+          <a href="#contact" style={link}>Contact</a>
         </div>
       </nav>
 
-      {/* HERO */}
       <section style={hero}>
         <div style={{ maxWidth: "1000px" }}>
           <img
@@ -73,54 +48,31 @@ export default function Home() {
             }}
           />
 
-          <p
-            style={{
-              color: "#d4af37",
-              letterSpacing: "4px",
-              fontWeight: "bold",
-              marginBottom: "20px",
-            }}
-          >
-            PREMIUM WELLNESS • IMPORT • EXPORT
-          </p>
+          <p style={heroSmall}>PREMIUM WELLNESS • IMPORT • EXPORT</p>
 
-          <h1 style={heroTitle}>
-            Eagle International Import & Export LLC
-          </h1>
+          <h1 style={heroTitle}>Eagle International Import & Export LLC</h1>
 
           <p style={heroText}>
             Premium wellness, beauty, and botanical products for global markets.
           </p>
 
-          <a href="#contact" style={button}>
-            Request a Quote
-          </a>
+          <a href="#contact" style={button}>Request a Quote</a>
         </div>
       </section>
 
-      {/* ABOUT */}
       <section id="about" style={section}>
         <p style={goldSmall}>ABOUT OUR COMPANY</p>
-
-        <h2 style={heading}>
-          Trusted Global Wellness Trade Partner
-        </h2>
-
+        <h2 style={heading}>Trusted Global Wellness Trade Partner</h2>
         <p style={paragraph}>
-          Eagle International Import & Export LLC is a USA-based company
-          specializing in premium wellness, beauty, and botanical products.
-          We focus on high-quality sourcing, international trade, and long-term
-          global business relationships.
+          Eagle International Import & Export LLC is a USA-based company specializing in premium
+          wellness, beauty, and botanical products. We focus on high-quality sourcing,
+          international trade, and long-term global business relationships.
         </p>
       </section>
 
-      {/* PRODUCTS */}
       <section id="products" style={section}>
         <p style={goldSmall}>FEATURED PRODUCTS</p>
-
-        <h2 style={heading}>
-          Premium Wellness Collection
-        </h2>
+        <h2 style={heading}>Premium Wellness Collection</h2>
 
         <div style={grid}>
           {products.map((item) => (
@@ -130,28 +82,18 @@ export default function Home() {
                 alt={item.title}
                 style={{
                   width: "100%",
-                  height: "260px",
+                  height: "300px",
                   objectFit: "cover",
                   borderRadius: "20px",
                   marginBottom: "22px",
                 }}
               />
 
-              <h3
-                style={{
-                  fontSize: "24px",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 style={{ fontSize: "24px", marginBottom: "12px" }}>
                 {item.title}
               </h3>
 
-              <p
-                style={{
-                  color: "#555",
-                  lineHeight: "1.7",
-                }}
-              >
+              <p style={{ color: "#555", lineHeight: "1.7" }}>
                 {item.text}
               </p>
             </div>
@@ -159,65 +101,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section id="services" style={darkSection}>
         <p style={goldSmall}>WHY WORK WITH US</p>
-
-        <h2
-          style={{
-            ...heading,
-            color: "white",
-          }}
-        >
+        <h2 style={{ ...heading, color: "white" }}>
           Professional. Reliable. Global.
         </h2>
-
-        <p
-          style={{
-            ...paragraph,
-            color: "#ddd",
-            margin: "0 auto",
-          }}
-        >
-          We help connect international buyers, suppliers, and wellness brands
-          with high-quality products, reliable communication, and professional
-          import/export support.
+        <p style={{ ...paragraph, color: "#ddd", margin: "0 auto" }}>
+          We help connect international buyers, suppliers, and wellness brands with high-quality
+          products, reliable communication, and professional import/export support.
         </p>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" style={section}>
         <p style={goldSmall}>CONTACT</p>
-
-        <h2 style={heading}>
-          Let’s Build Business Together
-        </h2>
-
+        <h2 style={heading}>Let’s Build Business Together</h2>
         <p style={paragraph}>
-          For wholesale inquiries, partnerships, sourcing, and international
-          trade opportunities, contact Eagle International Import & Export LLC.
+          For wholesale inquiries, partnerships, sourcing, and international trade opportunities,
+          contact Eagle International Import & Export LLC.
         </p>
 
         <div style={contactBox}>
-          <p>
-            <strong>Company:</strong>{" "}
-            Eagle International Import & Export LLC
-          </p>
-
-          <p>
-            <strong>Location:</strong> Georgia, USA
-          </p>
-
+          <p><strong>Company:</strong> Eagle International Import & Export LLC</p>
+          <p><strong>Location:</strong> Georgia, USA</p>
           <p>
             <strong>Email:</strong>{" "}
-            <a
-              href="mailto:info@eagleinternationalimportexport.com"
-              style={goldLink}
-            >
+            <a href="mailto:info@eagleinternationalimportexport.com" style={goldLink}>
               info@eagleinternationalimportexport.com
             </a>
           </p>
-
           <p>
             <strong>WhatsApp:</strong>{" "}
             <a
@@ -232,7 +143,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FLOATING WHATSAPP */}
       <a
         href="https://wa.me/12094870789"
         target="_blank"
@@ -242,10 +152,8 @@ export default function Home() {
         WhatsApp Us
       </a>
 
-      {/* FOOTER */}
       <footer style={footer}>
-        © 2026 Eagle International Import & Export LLC.
-        All Rights Reserved.
+        © 2026 Eagle International Import & Export LLC. All Rights Reserved.
       </footer>
     </main>
   );
@@ -276,7 +184,7 @@ const link = {
 };
 
 const hero = {
-  minHeight: "780px",
+  minHeight: "760px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -285,6 +193,13 @@ const hero = {
   background:
     "radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 30%), linear-gradient(135deg, #050505, #241b10, #000)",
   color: "white",
+};
+
+const heroSmall = {
+  color: "#d4af37",
+  letterSpacing: "4px",
+  fontWeight: "bold",
+  marginBottom: "20px",
 };
 
 const heroTitle = {
@@ -352,7 +267,6 @@ const card = {
   borderRadius: "24px",
   boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
   border: "1px solid #eee",
-  transition: "0.3s",
 };
 
 const darkSection = {
