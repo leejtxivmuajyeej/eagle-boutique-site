@@ -1,29 +1,23 @@
 export default function Home() {
   const products = [
     {
-      title: "Fresh Ginger",
-      text: "Premium agricultural sourcing for wholesale and international buyers."
+      title: "Ginger Shampoo",
+      text: "Luxury botanical ginger shampoo designed for scalp care, healthy-looking hair, and premium wellness beauty routines.",
+      image:
+        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
     },
     {
-      title: "Specialty Rice",
-      text: "Unique rice products from trusted Asian supply partners."
+      title: "Herbal Toothpaste",
+      text: "Premium herbal toothpaste inspired by natural wellness and daily oral care traditions.",
+      image:
+        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
     },
     {
       title: "Wolffia Protein",
-      text: "Plant-based wellness and supplement product opportunities."
+      text: "Plant-based superfood protein supplement crafted for wellness, nutrition, and healthy lifestyles.",
+      image:
+        "https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png",
     },
-    {
-      title: "Beauty Products",
-      text: "Beauty, personal care, and wellness products for global markets."
-    },
-    {
-      title: "Import Services",
-      text: "Support for sourcing, documentation, and international trade."
-    },
-    {
-      title: "Export Services",
-      text: "Connecting quality products from the USA to overseas buyers."
-    }
   ];
 
   return (
@@ -31,7 +25,7 @@ export default function Home() {
       style={{
         fontFamily: "Arial, sans-serif",
         background: "#f6f1e8",
-        color: "#111"
+        color: "#111",
       }}
     >
       {/* NAVBAR */}
@@ -41,7 +35,7 @@ export default function Home() {
           alt="Eagle International Logo"
           style={{
             height: "90px",
-            objectFit: "contain"
+            objectFit: "contain",
           }}
         />
 
@@ -64,10 +58,9 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section style={hero}>
         <div style={{ maxWidth: "1000px" }}>
-          {/* BIG CENTER LOGO */}
           <img
             src="https://i.postimg.cc/TYZbQ8KP/Chat-GPT-Image-May-20-2026-02-03-52-AM.png"
             alt="Eagle International Logo"
@@ -76,7 +69,7 @@ export default function Home() {
               height: "230px",
               objectFit: "contain",
               margin: "0 auto 30px",
-              display: "block"
+              display: "block",
             }}
           />
 
@@ -85,10 +78,10 @@ export default function Home() {
               color: "#d4af37",
               letterSpacing: "4px",
               fontWeight: "bold",
-              marginBottom: "20px"
+              marginBottom: "20px",
             }}
           >
-            GLOBAL SOURCING • IMPORT • EXPORT
+            PREMIUM WELLNESS • IMPORT • EXPORT
           </p>
 
           <h1 style={heroTitle}>
@@ -96,8 +89,7 @@ export default function Home() {
           </h1>
 
           <p style={heroText}>
-            Connecting premium agricultural, wellness, beauty,
-            and specialty products to global markets.
+            Premium wellness, beauty, and botanical products for global markets.
           </p>
 
           <a href="#contact" style={button}>
@@ -111,35 +103,44 @@ export default function Home() {
         <p style={goldSmall}>ABOUT OUR COMPANY</p>
 
         <h2 style={heading}>
-          Trusted Global Trade Partner
+          Trusted Global Wellness Trade Partner
         </h2>
 
         <p style={paragraph}>
           Eagle International Import & Export LLC is a USA-based company
-          specializing in sourcing, importing, exporting, and distributing
-          quality products across international markets.
-          We focus on long-term relationships, reliable communication,
-          and professional trade support.
+          specializing in premium wellness, beauty, and botanical products.
+          We focus on high-quality sourcing, international trade, and long-term
+          global business relationships.
         </p>
       </section>
 
       {/* PRODUCTS */}
       <section id="products" style={section}>
-        <p style={goldSmall}>PRODUCTS & SERVICES</p>
+        <p style={goldSmall}>FEATURED PRODUCTS</p>
 
         <h2 style={heading}>
-          What We Offer
+          Premium Wellness Collection
         </h2>
 
         <div style={grid}>
           {products.map((item) => (
             <div key={item.title} style={card}>
-              <div style={imageBox}></div>
+              <img
+                src={item.image}
+                alt={item.title}
+                style={{
+                  width: "100%",
+                  height: "260px",
+                  objectFit: "cover",
+                  borderRadius: "20px",
+                  marginBottom: "22px",
+                }}
+              />
 
               <h3
                 style={{
-                  fontSize: "22px",
-                  marginBottom: "10px"
+                  fontSize: "24px",
+                  marginBottom: "12px",
                 }}
               >
                 {item.title}
@@ -148,7 +149,7 @@ export default function Home() {
               <p
                 style={{
                   color: "#555",
-                  lineHeight: "1.6"
+                  lineHeight: "1.7",
                 }}
               >
                 {item.text}
@@ -165,7 +166,7 @@ export default function Home() {
         <h2
           style={{
             ...heading,
-            color: "white"
+            color: "white",
           }}
         >
           Professional. Reliable. Global.
@@ -175,12 +176,12 @@ export default function Home() {
           style={{
             ...paragraph,
             color: "#ddd",
-            margin: "0 auto"
+            margin: "0 auto",
           }}
         >
-          We help connect suppliers, buyers, and logistics partners
-          with a focus on quality, trust, clear communication,
-          product sourcing, and international business growth.
+          We help connect international buyers, suppliers, and wellness brands
+          with high-quality products, reliable communication, and professional
+          import/export support.
         </p>
       </section>
 
@@ -193,9 +194,8 @@ export default function Home() {
         </h2>
 
         <p style={paragraph}>
-          For product sourcing, wholesale inquiries,
-          import/export support, or partnership opportunities,
-          contact Eagle International Import & Export LLC.
+          For wholesale inquiries, partnerships, sourcing, and international
+          trade opportunities, contact Eagle International Import & Export LLC.
         </p>
 
         <div style={contactBox}>
@@ -260,19 +260,19 @@ const nav = {
   color: "white",
   position: "sticky",
   top: 0,
-  zIndex: 1000
+  zIndex: 1000,
 };
 
 const navLinks = {
   display: "flex",
   gap: "28px",
   fontSize: "15px",
-  fontWeight: "600"
+  fontWeight: "600",
 };
 
 const link = {
   color: "white",
-  textDecoration: "none"
+  textDecoration: "none",
 };
 
 const hero = {
@@ -284,13 +284,13 @@ const hero = {
   padding: "90px 8%",
   background:
     "radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 30%), linear-gradient(135deg, #050505, #241b10, #000)",
-  color: "white"
+  color: "white",
 };
 
 const heroTitle = {
   fontSize: "68px",
   lineHeight: "1.08",
-  margin: "18px 0"
+  margin: "18px 0",
 };
 
 const heroText = {
@@ -300,7 +300,7 @@ const heroText = {
   marginBottom: "38px",
   maxWidth: "900px",
   marginLeft: "auto",
-  marginRight: "auto"
+  marginRight: "auto",
 };
 
 const button = {
@@ -311,39 +311,39 @@ const button = {
   borderRadius: "999px",
   textDecoration: "none",
   fontWeight: "bold",
-  fontSize: "17px"
+  fontSize: "17px",
 };
 
 const section = {
   padding: "90px 8%",
   maxWidth: "1250px",
-  margin: "0 auto"
+  margin: "0 auto",
 };
 
 const goldSmall = {
   color: "#b68b1d",
   fontWeight: "bold",
   letterSpacing: "2px",
-  fontSize: "14px"
+  fontSize: "14px",
 };
 
 const heading = {
   fontSize: "48px",
-  margin: "14px 0 20px"
+  margin: "14px 0 20px",
 };
 
 const paragraph = {
   fontSize: "19px",
   lineHeight: "1.9",
   color: "#444",
-  maxWidth: "900px"
+  maxWidth: "900px",
 };
 
 const grid = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
-  gap: "28px",
-  marginTop: "40px"
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+  gap: "30px",
+  marginTop: "40px",
 };
 
 const card = {
@@ -351,22 +351,15 @@ const card = {
   padding: "26px",
   borderRadius: "24px",
   boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
-  border: "1px solid #eee"
-};
-
-const imageBox = {
-  height: "170px",
-  borderRadius: "18px",
-  background:
-    "linear-gradient(135deg, #f1ede4, #d8caa8)",
-  marginBottom: "22px"
+  border: "1px solid #eee",
+  transition: "0.3s",
 };
 
 const darkSection = {
   padding: "90px 8%",
   background: "#0d0d0d",
   color: "white",
-  textAlign: "center"
+  textAlign: "center",
 };
 
 const contactBox = {
@@ -374,13 +367,13 @@ const contactBox = {
   padding: "35px",
   background: "white",
   borderRadius: "24px",
-  boxShadow: "0 14px 35px rgba(0,0,0,0.08)"
+  boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
 };
 
 const goldLink = {
   color: "#b68b1d",
   textDecoration: "none",
-  fontWeight: "bold"
+  fontWeight: "bold",
 };
 
 const whatsappButton = {
@@ -394,12 +387,12 @@ const whatsappButton = {
   textDecoration: "none",
   fontWeight: "bold",
   boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
-  zIndex: 999
+  zIndex: 999,
 };
 
 const footer = {
   background: "#050505",
   color: "#aaa",
   textAlign: "center",
-  padding: "30px"
+  padding: "30px",
 };
