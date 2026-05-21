@@ -8,12 +8,14 @@ export default function Home() {
       text: "Luxury botanical ginger shampoo designed for scalp care, healthy-looking hair, and wellness beauty routines.",
       order: "Hello, I want to order Ginger Shampoo.",
     },
+
     {
       name: "Herbal Toothpaste",
       image: "https://i.postimg.cc/25TL4F0z/Herbal-Toothpaste.jpg",
       text: "Premium herbal toothpaste inspired by natural wellness and daily oral care traditions.",
       order: "Hello, I want to order Herbal Toothpaste.",
     },
+
     {
       name: "Wolffia Protein",
       image: "https://i.postimg.cc/TY8j20SL/wolffia.jpg",
@@ -26,9 +28,14 @@ export default function Home() {
     <main className="page">
       <section className="hero">
         <div className="content">
-          <p className="brand">EAGLE INTERNATIONAL IMPORT EXPORT</p>
 
-          <h1>Premium Wellness Collection</h1>
+          <p className="brand">
+            EAGLE INTERNATIONAL IMPORT EXPORT
+          </p>
+
+          <h1>
+            Premium Wellness Collection
+          </h1>
 
           <div className="goldLine"></div>
 
@@ -47,13 +54,18 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={product.image} alt={product.name} />
+
+                <img
+                  src={product.image}
+                  alt={product.name}
+                />
 
                 <h2>{product.name}</h2>
 
                 <p>{product.text}</p>
 
                 <span>Click to Order</span>
+
               </a>
             ))}
           </div>
@@ -63,7 +75,7 @@ export default function Home() {
       <a
         className="whatsapp"
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          "Hello, I want to order your products."
+          "Hello, I want to order your wellness products."
         )}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -74,136 +86,234 @@ export default function Home() {
       <style jsx>{`
         .page {
           min-height: 100vh;
+
           margin: 0;
+
           font-family: Arial, Helvetica, sans-serif;
-          background: #f7f2ea;
+
+          background: #eef3ea;
         }
 
         .hero {
           min-height: 100vh;
+
           padding: 70px 6% 120px;
+
           background:
             linear-gradient(
-              rgba(255, 255, 255, 0.12),
-              rgba(255, 255, 255, 0.82)
+              rgba(255,255,255,0.20),
+              rgba(255,255,255,0.72)
             ),
-            url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=90");
+
+            url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=100");
+
           background-size: cover;
+
           background-position: center;
+
+          background-repeat: no-repeat;
+
+          position: relative;
+
+          overflow: hidden;
+        }
+
+        .hero::before {
+          content: "";
+
+          position: absolute;
+
+          inset: 0;
+
+          background:
+            radial-gradient(circle at top left,
+            rgba(255,255,255,0.45),
+            transparent 35%),
+
+            radial-gradient(circle at bottom right,
+            rgba(255,255,255,0.28),
+            transparent 30%);
+
+          pointer-events: none;
         }
 
         .content {
+          position: relative;
+
+          z-index: 2;
+
           max-width: 1300px;
+
           margin: 0 auto;
+
           text-align: center;
         }
 
         .brand {
           margin: 0 0 26px;
+
           letter-spacing: 5px;
+
           font-size: 16px;
+
           font-weight: 800;
+
           color: #123c26;
         }
 
         h1 {
           margin: 0;
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(46px, 7vw, 92px);
+
+          font-family: Georgia, serif;
+
+          font-size: clamp(48px, 7vw, 92px);
+
           line-height: 1.05;
+
           color: #07391f;
+
           font-weight: 700;
         }
 
         .goldLine {
-          width: 280px;
+          width: 260px;
+
           height: 2px;
+
           background: #b58a2a;
-          margin: 26px auto;
+
+          margin: 28px auto;
         }
 
         .subtitle {
-          margin: 0 0 45px;
+          margin: 0 0 55px;
+
           font-size: 24px;
-          color: #333;
+
+          color: #2e2e2e;
         }
 
         .products {
           display: grid;
+
           grid-template-columns: repeat(3, 1fr);
-          gap: 42px;
+
+          gap: 45px;
+
           align-items: end;
         }
 
         .product {
           display: block;
+
           text-decoration: none;
+
           color: #111;
-          padding: 24px 20px 28px;
-          border-radius: 30px;
-          transition: 0.3s ease;
+
+          padding: 26px 22px 32px;
+
+          border-radius: 34px;
+
+          background: rgba(255,255,255,0.18);
+
+          backdrop-filter: blur(12px);
+
+          border: 1px solid rgba(255,255,255,0.35);
+
+          transition: 0.35s ease;
         }
 
         .product:hover {
-          background: rgba(255, 255, 255, 0.68);
-          transform: translateY(-8px);
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.13);
+          transform: translateY(-10px);
+
+          background: rgba(255,255,255,0.32);
+
+          box-shadow: 0 22px 55px rgba(0,0,0,0.16);
         }
 
         .product img {
           width: 100%;
-          height: 390px;
+
+          height: 420px;
+
           object-fit: contain;
-          margin-bottom: 18px;
+
+          margin-bottom: 22px;
         }
 
         .product h2 {
-          margin: 0 0 12px;
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 30px;
+          margin: 0 0 14px;
+
+          font-family: Georgia, serif;
+
+          font-size: 34px;
+
           color: #07391f;
         }
 
         .product p {
-          max-width: 370px;
+          max-width: 360px;
+
           margin: 0 auto 18px;
-          font-size: 17px;
-          line-height: 1.7;
+
+          font-size: 18px;
+
+          line-height: 1.8;
+
           color: #111;
         }
 
         .product span {
           display: inline-block;
-          margin-top: 8px;
+
+          margin-top: 12px;
+
           background: #18c45c;
+
           color: white;
-          padding: 12px 24px;
+
+          padding: 14px 28px;
+
           border-radius: 999px;
+
           font-weight: 800;
-          box-shadow: 0 8px 18px rgba(24, 196, 92, 0.32);
+
+          box-shadow: 0 8px 18px rgba(24,196,92,0.32);
         }
 
         .whatsapp {
           position: fixed;
+
           right: 28px;
+
           bottom: 28px;
+
           background: #18c45c;
+
           color: white;
-          padding: 16px 28px;
+
+          padding: 18px 30px;
+
           border-radius: 999px;
+
           font-weight: 800;
+
           text-decoration: none;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+          box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
           z-index: 999;
         }
 
         @media (max-width: 900px) {
+
           .hero {
-            padding: 42px 5% 120px;
+            padding: 45px 5% 120px;
           }
 
           .brand {
             font-size: 13px;
+
             letter-spacing: 3px;
           }
 
@@ -213,7 +323,8 @@ export default function Home() {
 
           .products {
             grid-template-columns: 1fr;
-            gap: 28px;
+
+            gap: 30px;
           }
 
           .product img {
@@ -222,7 +333,9 @@ export default function Home() {
 
           .whatsapp {
             left: 20px;
+
             right: 20px;
+
             text-align: center;
           }
         }
