@@ -1,187 +1,248 @@
-export default function Home() {
-  const products = [
-    {
-      name: "Ginger Shampoo",
-      price: "$25",
-      image:
-        "https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      name: "Wolffia Protein",
-      price: "$35",
-      image:
-        "https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      name: "Herbal Toothpaste",
-      price: "$35",
-      image:
-        "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1200&auto=format&fit=crop",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XENGORA | Natural Products</title>
 
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background:
-          "linear-gradient(135deg, #f6f7fb 0%, #dfe9f3 50%, #ffffff 100%)",
-        fontFamily: "Arial, sans-serif",
-        padding: "40px 20px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
-        <h1
-          style={{
-            textAlign: "center",
-            fontSize: "54px",
-            color: "#b8860b",
-            marginBottom: "10px",
-            letterSpacing: "3px",
-          }}
-        >
-          XENGORA
-        </h1>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f5ef;
+      color: #222;
+    }
 
-        <p
-          style={{
-            textAlign: "center",
-            color: "#555",
-            fontSize: "18px",
-            marginBottom: "50px",
-          }}
-        >
-          Luxury wellness products made simple.
-        </p>
+    header {
+      background: white;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "30px",
-          }}
-        >
-          {products.map((product, index) => (
-            <div
-              key={index}
-              style={{
-                background: "rgba(255,255,255,0.7)",
-                backdropFilter: "blur(12px)",
-                borderRadius: "28px",
-                overflow: "hidden",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
-                transition: "0.3s",
-              }}
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                style={{
-                  width: "100%",
-                  height: "260px",
-                  objectFit: "cover",
-                }}
-              />
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #8a5a2b;
+      letter-spacing: 2px;
+    }
 
-              <div style={{ padding: "25px" }}>
-                <h2
-                  style={{
-                    fontSize: "28px",
-                    marginBottom: "10px",
-                    color: "#222",
-                  }}
-                >
-                  {product.name}
-                </h2>
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
 
-                <div
-                  style={{
-                    fontSize: "30px",
-                    color: "#b8860b",
-                    fontWeight: "bold",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {product.price}
-                </div>
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(#fffaf2, #f1e6d6);
+    }
 
-                <button
-                  style={{
-                    width: "100%",
-                    padding: "14px",
-                    border: "none",
-                    borderRadius: "16px",
-                    background:
-                      "linear-gradient(135deg, #d4af37, #f5d76e)",
-                    color: "#222",
-                    fontSize: "17px",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                  }}
-                >
-                  Order Now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+    .hero h1 {
+      font-size: 42px;
+      color: #6b3f1d;
+    }
 
-        <div
-          style={{
-            marginTop: "60px",
-            background: "rgba(255,255,255,0.7)",
-            backdropFilter: "blur(12px)",
-            borderRadius: "28px",
-            padding: "40px",
-            textAlign: "center",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
-          }}
-        >
-          <h2
-            style={{
-              color: "#b8860b",
-              marginBottom: "20px",
-              fontSize: "36px",
-            }}
-          >
-            Payment Options
-          </h2>
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
 
-          <p style={{ fontSize: "18px", marginBottom: "10px" }}>
-            PayPal: @xengthao1999
-          </p>
+    .products {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-          <p style={{ fontSize: "18px", marginBottom: "10px" }}>
-            Zelle: 478-697-2163
-          </p>
+    .products h2 {
+      text-align: center;
+      font-size: 34px;
+      color: #6b3f1d;
+    }
 
-          <p style={{ fontSize: "18px", marginBottom: "30px" }}>
-            Venmo: @xengthao99
-          </p>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
 
-          <a
-            href="https://wa.me/14786972163"
-            target="_blank"
-            style={{
-              display: "inline-block",
-              padding: "16px 35px",
-              borderRadius: "999px",
-              background: "#25D366",
-              color: "white",
-              textDecoration: "none",
-              fontWeight: "bold",
-              fontSize: "18px",
-            }}
-          >
-            Order on WhatsApp
-          </a>
-        </div>
-      </div>
+    .product-card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      background: #fafafa;
+      border-radius: 14px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #8a5a2b;
+    }
+
+    input {
+      width: 70px;
+      padding: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .checkout {
+      background: white;
+      margin: 40px auto;
+      max-width: 700px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .total {
+      font-size: 28px;
+      color: #6b3f1d;
+      font-weight: bold;
+    }
+
+    .pay-box {
+      background: #f8f5ef;
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: block;
+      margin: 12px auto;
+      padding: 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      max-width: 300px;
+    }
+
+    .paypal { background: #0070ba; color: white; }
+    .whatsapp { background: #25D366; color: white; }
+    .venmo { background: #3d95ce; color: white; }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #6b3f1d;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">XENGORA</div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Natural Wellness Products</h1>
+  <p>Premium products made for beauty, health, and everyday confidence.</p>
+</section>
+
+<section class="products" id="products">
+  <h2>Shop Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="images/shampoo.jpg" alt="Ginger Shampoo">
+      <h3>Ginger Shampoo</h3>
+      <p class="price">$25</p>
+      <input type="number" id="shampooQty" value="0" min="0" oninput="calculateTotal()">
     </div>
-  );
-}
+
+    <div class="product-card">
+      <img src="images/protein.jpg" alt="Wolffia Protein">
+      <h3>Wolffia Protein</h3>
+      <p class="price">$35</p>
+      <input type="number" id="proteinQty" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+    <div class="product-card">
+      <img src="images/toothpaste.jpg" alt="Herbal Toothpaste">
+      <h3>Herbal Toothpaste</h3>
+      <p class="price">$35</p>
+      <input type="number" id="toothpasteQty" value="0" min="0" oninput="calculateTotal()">
+    </div>
+
+  </div>
+</section>
+
+<section class="checkout" id="order">
+  <h2>Order Summary</h2>
+  <p class="total">Total: $<span id="totalAmount">0</span></p>
+
+  <div class="pay-box">
+    <h3>Payment Options</h3>
+
+    <a class="btn paypal" href="https://www.paypal.me/xengthao1999" target="_blank">
+      Pay with PayPal
+    </a>
+
+    <a class="btn venmo" href="#">
+      Venmo: @xengthao99
+    </a>
+
+    <p><strong>Zelle:</strong><br>478-697-2163</p>
+
+    <a class="btn whatsapp" id="whatsappBtn" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>© 2026 XENGORA | Eagle International Import & Export LLC</p>
+</footer>
+
+<script>
+  function calculateTotal() {
+    const shampoo = Number(document.getElementById("shampooQty").value) || 0;
+    const protein = Number(document.getElementById("proteinQty").value) || 0;
+    const toothpaste = Number(document.getElementById("toothpasteQty").value) || 0;
+
+    const total = (shampoo * 25) + (protein * 35) + (toothpaste * 35);
+
+    document.getElementById("totalAmount").textContent = total;
+
+    const message =
+      `Hello, I want to order:%0A` +
+      `Ginger Shampoo: ${shampoo}%0A` +
+      `Wolffia Protein: ${protein}%0A` +
+      `Herbal Toothpaste: ${toothpaste}%0A` +
+      `Total: $${total}`;
+
+    document.getElementById("whatsappBtn").href =
+      `https://wa.me/14786972163?text=${message}`;
+  }
+
+  calculateTotal();
+</script>
+
+</body>
+</html>
