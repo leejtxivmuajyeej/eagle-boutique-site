@@ -1,3 +1,4 @@
+```jsx
 import { useState } from "react";
 
 export default function Home() {
@@ -5,7 +6,18 @@ export default function Home() {
   const [toothpaste, setToothpaste] = useState(0);
   const [protein, setProtein] = useState(0);
 
-  const total = shampoo * 25 + toothpaste * 35 + protein * 35;
+  const subtotal = shampoo * 25 + toothpaste * 35 + protein * 35;
+
+  const totalItems = shampoo + toothpaste + protein;
+
+  const shipping =
+    totalItems >= 3
+      ? 0
+      : totalItems > 0
+      ? 10
+      : 0;
+
+  const total = subtotal + shipping;
 
   const whatsappMessage = encodeURIComponent(
     `Hello, I want to order:
@@ -14,6 +26,12 @@ Ginger Shampoo: ${shampoo}
 Herbal Toothpaste: ${toothpaste}
 Wolffia Protein: ${protein}
 
+Shipping: ${
+      shipping === 0 && totalItems >= 3
+        ? "FREE"
+        : `$${shipping}`
+    }
+
 Total: $${total}`
   );
 
@@ -21,63 +39,120 @@ Total: $${total}`
     <>
       <div className="page">
         <section className="products-section">
-          <h1 className="title">Premium Wellness Collection</h1>
-          <p className="subtitle">Luxury wellness products made simple.</p>
+          <h1 className="title">
+            Premium Wellness Collection
+          </h1>
+
+          <p className="subtitle">
+            Luxury wellness products made simple.
+          </p>
 
           <div className="product-grid">
+
+            {/* Ginger Shampoo */}
             <div className="product-card">
-              <img src="/images/ginger-shampoo.jpg" alt="Ginger Shampoo" />
+              <img
+                src="/images/ginger-shampoo.jpg"
+                alt="Ginger Shampoo"
+              />
+
               <h2>Ginger Shampoo</h2>
+
               <p>
                 Luxury botanical ginger shampoo designed for scalp care,
                 healthy-looking hair, and wellness beauty routines.
               </p>
+
               <div className="price">$25</div>
+
               <input
                 type="number"
                 min="0"
                 value={shampoo}
-                onChange={(e) => setShampoo(Number(e.target.value))}
+                onChange={(e) =>
+                  setShampoo(Number(e.target.value))
+                }
               />
             </div>
 
+            {/* Herbal Toothpaste */}
             <div className="product-card">
-              <img src="/images/herbal-toothpaste.jpg" alt="Herbal Toothpaste" />
+              <img
+                src="/images/herbal-toothpaste.jpg"
+                alt="Herbal Toothpaste"
+              />
+
               <h2>Herbal Toothpaste</h2>
+
               <p>
-                Premium herbal toothpaste inspired by natural wellness and daily
-                oral care traditions.
+                Premium herbal toothpaste inspired by natural wellness
+                and daily oral care traditions.
               </p>
+
               <div className="price">$35</div>
+
               <input
                 type="number"
                 min="0"
                 value={toothpaste}
-                onChange={(e) => setToothpaste(Number(e.target.value))}
+                onChange={(e) =>
+                  setToothpaste(Number(e.target.value))
+                }
               />
             </div>
 
+            {/* Wolffia Protein */}
             <div className="product-card">
-              <img src="/images/wolffia-protein.jpg" alt="Wolffia Protein" />
+              <img
+                src="/images/wolffia-protein.jpg"
+                alt="Wolffia Protein"
+              />
+
               <h2>Wolffia Protein</h2>
+
               <p>
-                Plant-based superfood protein supplement crafted for wellness,
-                nutrition, and healthy lifestyles.
+                Plant-based superfood protein supplement crafted for
+                wellness, nutrition, and healthy lifestyles.
               </p>
+
               <div className="price">$35</div>
+
               <input
                 type="number"
                 min="0"
                 value={protein}
-                onChange={(e) => setProtein(Number(e.target.value))}
+                onChange={(e) =>
+                  setProtein(Number(e.target.value))
+                }
               />
             </div>
+
           </div>
         </section>
 
+        {/* ORDER SUMMARY */}
         <section className="checkout-section">
+
           <h2>Order Summary</h2>
-          <div className="total">Total: ${total}</div>
+
+          <div className="summary-line">
+            <span>Subtotal</span>
+            <span>${subtotal}</span>
+          </div>
+
+          <div className="summary-line">
+            <span>Shipping</span>
+
+            <span>
+              {shipping === 0 && totalItems >= 3
+                ? "FREE"
+                : `$${shipping}`}
+            </span>
+          </div>
+
+          <div className="total">
+            Total: ${total}
+          </div>
 
           <a
             className="whatsapp-btn"
@@ -88,8 +163,13 @@ Total: $${total}`
           </a>
 
           <div className="payment-box">
-            <p><strong>Zelle:</strong> 478-697-2163</p>
-            <p><strong>Venmo:</strong> @xengthao99</p>
+            <p>
+              <strong>Zelle:</strong> 478-697-2163
+            </p>
+
+            <p>
+              <strong>Venmo:</strong> @xengthao99
+            </p>
 
             <a
               className="paypal-btn"
@@ -99,6 +179,7 @@ Total: $${total}`
               Pay with PayPal
             </a>
           </div>
+
         </section>
 
         <footer>
@@ -204,10 +285,20 @@ Total: $${total}`
           margin-bottom: 20px;
         }
 
+        .summary-line {
+          display: flex;
+          justify-content: space-between;
+          max-width: 420px;
+          margin: 14px auto;
+          font-size: 20px;
+          color: #333;
+        }
+
         .total {
           font-size: 38px;
           font-weight: 900;
           color: #b8860b;
+          margin-top: 28px;
           margin-bottom: 30px;
         }
 
@@ -224,7 +315,7 @@ Total: $${total}`
         }
 
         .whatsapp-btn {
-          background: #25d366;
+          background: #25D366;
         }
 
         .paypal-btn {
@@ -275,3 +366,4 @@ Total: $${total}`
     </>
   );
 }
+```
