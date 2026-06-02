@@ -3,110 +3,155 @@ import { useState } from "react";
 export default function Home() {
   const [shampoo, setShampoo] = useState(0);
   const [toothpaste, setToothpaste] = useState(0);
-  const [wolffia, setWolffia] = useState(0);
+  const [protein, setProtein] = useState(0);
 
-  const total = shampoo * 25 + toothpaste * 35 + wolffia * 35;
+  const total = shampoo * 25 + toothpaste * 35 + protein * 35;
 
   const whatsappMessage = encodeURIComponent(
     `Hello, I want to order:
+
 Ginger Shampoo: ${shampoo}
 Herbal Toothpaste: ${toothpaste}
-Wolffia Protein: ${wolffia}
+Wolffia Protein: ${protein}
+
 Total: $${total}`
   );
 
   return (
     <>
-      <section className="products-section" id="products">
-        <h1>Premium Wellness Collection</h1>
+      <div className="page">
 
-        <div className="product-grid">
-          <div className="product-card">
-            <img src="/images/Shampoo.jpg" alt="Ginger Shampoo" />
-            <h3>Ginger Shampoo</h3>
-            <p>
-              Luxury botanical ginger shampoo designed for scalp care,
-              healthy-looking hair, and wellness beauty routines.
-            </p>
-            <h4>$25</h4>
-            <input
-              type="number"
-              min="0"
-              value={shampoo}
-              onChange={(e) => setShampoo(Number(e.target.value))}
-            />
+        <section className="products-section">
+          <h1 className="title">Premium Wellness Collection</h1>
+
+          <div className="product-grid">
+
+            {/* Ginger Shampoo */}
+            <div className="product-card">
+              <img
+                src="/images/ginger-shampoo.jpg"
+                alt="Ginger Shampoo"
+              />
+
+              <h2>Ginger Shampoo</h2>
+
+              <p>
+                Luxury botanical ginger shampoo designed for scalp care,
+                healthy-looking hair, and wellness beauty routines.
+              </p>
+
+              <div className="price">$25</div>
+
+              <input
+                type="number"
+                min="0"
+                value={shampoo}
+                onChange={(e) => setShampoo(Number(e.target.value))}
+              />
+            </div>
+
+            {/* Herbal Toothpaste */}
+            <div className="product-card">
+              <img
+                src="/images/herbal-toothpaste.jpg"
+                alt="Herbal Toothpaste"
+              />
+
+              <h2>Herbal Toothpaste</h2>
+
+              <p>
+                Premium herbal toothpaste inspired by natural wellness
+                and daily oral care traditions.
+              </p>
+
+              <div className="price">$35</div>
+
+              <input
+                type="number"
+                min="0"
+                value={toothpaste}
+                onChange={(e) => setToothpaste(Number(e.target.value))}
+              />
+            </div>
+
+            {/* Wolffia Protein */}
+            <div className="product-card">
+              <img
+                src="/images/wolffia-protein.jpg"
+                alt="Wolffia Protein"
+              />
+
+              <h2>Wolffia Protein</h2>
+
+              <p>
+                Plant-based superfood protein supplement crafted for
+                wellness, nutrition, and healthy lifestyles.
+              </p>
+
+              <div className="price">$35</div>
+
+              <input
+                type="number"
+                min="0"
+                value={protein}
+                onChange={(e) => setProtein(Number(e.target.value))}
+              />
+            </div>
+
+          </div>
+        </section>
+
+        {/* ORDER SUMMARY */}
+        <section className="checkout-section">
+
+          <h2>Order Summary</h2>
+
+          <div className="total">
+            Total: ${total}
           </div>
 
-          <div className="product-card">
-            <img src="/images/Herbal Toothpaste.jpg" alt="Herbal Toothpaste" />
-            <h3>Herbal Toothpaste</h3>
-            <p>
-              Premium herbal toothpaste inspired by natural wellness and daily
-              oral care traditions.
-            </p>
-            <h4>$35</h4>
-            <input
-              type="number"
-              min="0"
-              value={toothpaste}
-              onChange={(e) => setToothpaste(Number(e.target.value))}
-            />
+          <a
+            className="whatsapp-btn"
+            href={`https://wa.me/14786972163?text=${whatsappMessage}`}
+            target="_blank"
+          >
+            Order on WhatsApp
+          </a>
+
+          <div className="payment-box">
+            <p><strong>Zelle:</strong> 478-697-2163</p>
+            <p><strong>Venmo:</strong> @xengthao99</p>
+
+            <a
+              className="paypal-btn"
+              href="https://www.paypal.me/xengthao1999"
+              target="_blank"
+            >
+              Pay with PayPal
+            </a>
           </div>
 
-          <div className="product-card">
-            <img src="/images/wolffia.jpg" alt="Wolffia Protein" />
-            <h3>Wolffia Protein</h3>
-            <p>
-              Plant-based superfood protein supplement crafted for wellness,
-              nutrition, and healthy lifestyles.
-            </p>
-            <h4>$35</h4>
-            <input
-              type="number"
-              min="0"
-              value={wolffia}
-              onChange={(e) => setWolffia(Number(e.target.value))}
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="checkout">
-        <h2>Order Summary</h2>
-        <div className="total">Total: ${total}</div>
+        <footer>
+          © 2026 Eagle International Import & Export LLC
+        </footer>
 
-        <a
-          className="whatsapp"
-          href={`https://wa.me/14786972163?text=${whatsappMessage}`}
-          target="_blank"
-        >
-          Order on WhatsApp
-        </a>
-
-        <p><strong>Zelle:</strong> 478-697-2163</p>
-        <p><strong>Venmo:</strong> @xengthao99</p>
-        <a className="paypal" href="https://www.paypal.me/xengthao1999" target="_blank">
-          PayPal
-        </a>
-      </section>
-
-      <footer>
-        © 2026 Eagle International Import & Export LLC
-      </footer>
+      </div>
 
       <style jsx>{`
-        body {
-          margin: 0;
-        }
-
-        .products-section {
+        .page {
           background: #f4f0ea;
-          padding: 80px 40px;
+          min-height: 100vh;
           font-family: Arial, Helvetica, sans-serif;
         }
 
-        h1 {
-          font-size: 46px;
+        .products-section {
+          padding: 60px 40px;
+        }
+
+        .title {
+          font-size: 56px;
           font-weight: 900;
           margin-bottom: 50px;
           color: #000;
@@ -120,20 +165,20 @@ Total: $${total}`
 
         .product-card {
           background: white;
-          border-radius: 18px;
-          padding: 22px 24px 32px;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+          border-radius: 22px;
+          padding: 24px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
 
         .product-card img {
           width: 100%;
-          height: 240px;
+          height: 340px;
           object-fit: contain;
-          display: block;
-          margin: 0 auto 28px;
+          margin-bottom: 25px;
+          border-radius: 12px;
         }
 
-        .product-card h3 {
+        .product-card h2 {
           font-size: 20px;
           font-weight: 800;
           margin-bottom: 14px;
@@ -141,82 +186,103 @@ Total: $${total}`
 
         .product-card p {
           font-size: 14px;
-          line-height: 1.35;
+          line-height: 1.5;
+          color: #222;
           margin-bottom: 18px;
         }
 
-        .product-card h4 {
-          font-size: 22px;
+        .price {
+          font-size: 30px;
+          font-weight: bold;
           color: #b8860b;
-          margin: 10px 0;
+          margin-bottom: 14px;
         }
 
         input {
-          width: 80px;
-          padding: 9px;
+          width: 90px;
+          padding: 10px;
+          border-radius: 10px;
           border: 1px solid #ddd;
-          border-radius: 8px;
           font-size: 16px;
           text-align: center;
         }
 
-        .checkout {
+        .checkout-section {
           background: white;
-          padding: 40px;
+          margin: 60px auto;
+          max-width: 900px;
+          padding: 50px;
+          border-radius: 30px;
           text-align: center;
-          font-family: Arial, Helvetica, sans-serif;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
 
-        .checkout h2 {
-          font-size: 34px;
+        .checkout-section h2 {
+          font-size: 42px;
+          margin-bottom: 20px;
         }
 
         .total {
-          font-size: 30px;
+          font-size: 36px;
           font-weight: 900;
           color: #b8860b;
-          margin-bottom: 25px;
+          margin-bottom: 30px;
         }
 
-        .whatsapp,
-        .paypal {
-          display: block;
-          max-width: 320px;
-          margin: 12px auto;
-          padding: 14px 20px;
+        .whatsapp-btn,
+        .paypal-btn {
+          display: inline-block;
+          padding: 16px 28px;
           border-radius: 40px;
           text-decoration: none;
-          color: white;
           font-weight: bold;
+          color: white;
+          margin: 12px;
+          transition: 0.3s;
         }
 
-        .whatsapp {
-          background: #25d366;
+        .whatsapp-btn {
+          background: #25D366;
         }
 
-        .paypal {
+        .paypal-btn {
           background: #0070ba;
         }
 
-        footer {
-          text-align: center;
-          padding: 30px;
-          background: #111;
-          color: white;
-          font-family: Arial, Helvetica, sans-serif;
+        .whatsapp-btn:hover,
+        .paypal-btn:hover {
+          transform: scale(1.05);
         }
 
-        @media (max-width: 900px) {
+        .payment-box {
+          margin-top: 25px;
+          font-size: 18px;
+        }
+
+        footer {
+          background: #111;
+          color: white;
+          text-align: center;
+          padding: 28px;
+          margin-top: 60px;
+        }
+
+        @media (max-width: 1000px) {
           .product-grid {
             grid-template-columns: 1fr;
           }
 
-          h1 {
-            font-size: 34px;
+          .title {
+            font-size: 38px;
           }
 
           .products-section {
-            padding: 45px 20px;
+            padding: 40px 20px;
+          }
+
+          .checkout-section {
+            margin: 30px 20px;
+            padding: 35px 20px;
           }
         }
       `}</style>
