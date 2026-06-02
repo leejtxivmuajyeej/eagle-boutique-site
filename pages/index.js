@@ -27,6 +27,7 @@ export default function Home() {
       {/* HEADER */}
       <div style={styles.header}>
         <h1 style={styles.logo}>XENGORA</h1>
+
         <p style={styles.subtitle}>
           Luxury wellness products crafted for beauty, health, and lifestyle.
         </p>
@@ -37,6 +38,7 @@ export default function Home() {
 
         {/* SHAMPOO */}
         <div style={styles.card}>
+
           <img
             src="/images/shampoo.jpg"
             alt="Ginger Shampoo"
@@ -61,10 +63,12 @@ export default function Home() {
             }
             style={styles.input}
           />
+
         </div>
 
         {/* TOOTHPASTE */}
         <div style={styles.card}>
+
           <img
             src="/images/toothpaste.jpg"
             alt="Herbal Toothpaste"
@@ -89,10 +93,12 @@ export default function Home() {
             }
             style={styles.input}
           />
+
         </div>
 
         {/* PROTEIN */}
         <div style={styles.card}>
+
           <img
             src="/images/protein.jpg"
             alt="Wolffia Protein"
@@ -117,6 +123,7 @@ export default function Home() {
             }
             style={styles.input}
           />
+
         </div>
 
       </div>
@@ -126,9 +133,11 @@ export default function Home() {
 
         <h1>Order Summary</h1>
 
-        <h3>Subtotal: ${subtotal}</h3>
+        <h3 style={styles.summaryText}>
+          Subtotal: ${subtotal}
+        </h3>
 
-        <h3>
+        <h3 style={styles.summaryText}>
           Shipping: {shipping === 0 ? "Free" : `$${shipping}`}
         </h3>
 
@@ -162,7 +171,7 @@ const styles = {
     background: "#f5f1eb",
     minHeight: "100vh",
     padding: "40px 20px",
-    fontFamily: "Arial",
+    fontFamily: "Arial, sans-serif",
   },
 
   header: {
@@ -171,25 +180,29 @@ const styles = {
   },
 
   logo: {
-    fontSize: "60px",
-    marginBottom: "10px",
+    fontSize: "70px",
+    fontWeight: "bold",
+    marginBottom: "15px",
   },
 
   subtitle: {
     color: "#666",
-    fontSize: "18px",
+    fontSize: "20px",
   },
 
   products: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
     gap: "25px",
+    width: "100%",
+    maxWidth: "1400px",
+    margin: "auto",
   },
 
   card: {
     background: "white",
     borderRadius: "25px",
-    padding: "25px",
+    padding: "30px",
     textAlign: "center",
     boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
   },
@@ -203,14 +216,15 @@ const styles = {
 
   description: {
     marginTop: "15px",
-    lineHeight: "1.7",
+    lineHeight: "1.8",
     color: "#555",
+    fontSize: "16px",
   },
 
   price: {
-    fontSize: "50px",
+    fontSize: "55px",
     color: "#c18a00",
-    marginTop: "20px",
+    marginTop: "25px",
     fontWeight: "bold",
   },
 
@@ -227,22 +241,28 @@ const styles = {
   summary: {
     background: "white",
     maxWidth: "760px",
-    margin: "70px auto",
+    margin: "80px auto",
     padding: "60px 40px",
     borderRadius: "30px",
     textAlign: "center",
     boxShadow: "0 5px 25px rgba(0,0,0,0.08)",
   },
 
+  summaryText: {
+    fontSize: "28px",
+    marginTop: "15px",
+  },
+
   total: {
     color: "#c18a00",
-    fontSize: "44px",
-    marginTop: "20px",
+    fontSize: "52px",
+    marginTop: "25px",
+    fontWeight: "bold",
   },
 
   button: {
     display: "inline-block",
-    marginTop: "30px",
+    marginTop: "35px",
     background: "#25D366",
     color: "white",
     padding: "18px 40px",
