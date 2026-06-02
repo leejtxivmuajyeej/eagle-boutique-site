@@ -6,14 +6,19 @@ export default function Home() {
   const [toothpaste, setToothpaste] = useState(0);
   const [protein, setProtein] = useState(0);
 
+  // PRODUCT TOTAL
   const subtotal =
     shampoo * 25 +
     toothpaste * 35 +
     protein * 35;
 
+  // TOTAL ITEMS
   const totalItems =
     shampoo + toothpaste + protein;
 
+  // SHIPPING RULE
+  // 1-2 items = $10 shipping
+  // 3+ items = FREE shipping
   const shipping =
     totalItems === 0
       ? 0
@@ -21,6 +26,7 @@ export default function Home() {
       ? 10
       : 0;
 
+  // FINAL TOTAL
   const total = subtotal + shipping;
 
   const whatsappMessage = encodeURIComponent(
@@ -45,6 +51,7 @@ Total: $${total}`
     <>
       <div className="page">
 
+        {/* PRODUCTS */}
         <section className="products-section">
 
           <h1 className="title">
@@ -57,7 +64,7 @@ Total: $${total}`
 
           <div className="product-grid">
 
-            {/* Ginger Shampoo */}
+            {/* GINGER SHAMPOO */}
             <div className="product-card">
 
               <img
@@ -73,9 +80,7 @@ Total: $${total}`
                 and wellness beauty routines.
               </p>
 
-              <div className="price">
-                $25
-              </div>
+              <div className="price">$25</div>
 
               <input
                 type="number"
@@ -88,7 +93,7 @@ Total: $${total}`
 
             </div>
 
-            {/* Herbal Toothpaste */}
+            {/* HERBAL TOOTHPASTE */}
             <div className="product-card">
 
               <img
@@ -104,9 +109,7 @@ Total: $${total}`
                 traditions.
               </p>
 
-              <div className="price">
-                $35
-              </div>
+              <div className="price">$35</div>
 
               <input
                 type="number"
@@ -119,7 +122,7 @@ Total: $${total}`
 
             </div>
 
-            {/* Wolffia Protein */}
+            {/* WOLFFIA PROTEIN */}
             <div className="product-card">
 
               <img
@@ -135,9 +138,7 @@ Total: $${total}`
                 healthy lifestyles.
               </p>
 
-              <div className="price">
-                $35
-              </div>
+              <div className="price">$35</div>
 
               <input
                 type="number"
@@ -157,9 +158,7 @@ Total: $${total}`
         {/* ORDER SUMMARY */}
         <section className="checkout-section">
 
-          <h2>
-            Order Summary
-          </h2>
+          <h2>Order Summary</h2>
 
           <div className="summary-line">
             <span>Subtotal</span>
