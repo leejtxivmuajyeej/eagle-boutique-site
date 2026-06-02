@@ -20,28 +20,19 @@ Total: $${total}`
   return (
     <>
       <div className="page">
-
         <section className="products-section">
           <h1 className="title">Premium Wellness Collection</h1>
+          <p className="subtitle">Luxury wellness products made simple.</p>
 
           <div className="product-grid">
-
-            {/* Ginger Shampoo */}
             <div className="product-card">
-              <img
-                src="/images/ginger-shampoo.jpg"
-                alt="Ginger Shampoo"
-              />
-
+              <img src="/images/ginger-shampoo.jpg" alt="Ginger Shampoo" />
               <h2>Ginger Shampoo</h2>
-
               <p>
                 Luxury botanical ginger shampoo designed for scalp care,
                 healthy-looking hair, and wellness beauty routines.
               </p>
-
               <div className="price">$25</div>
-
               <input
                 type="number"
                 min="0"
@@ -50,22 +41,14 @@ Total: $${total}`
               />
             </div>
 
-            {/* Herbal Toothpaste */}
             <div className="product-card">
-              <img
-                src="/images/herbal-toothpaste.jpg"
-                alt="Herbal Toothpaste"
-              />
-
+              <img src="/images/herbal-toothpaste.jpg" alt="Herbal Toothpaste" />
               <h2>Herbal Toothpaste</h2>
-
               <p>
-                Premium herbal toothpaste inspired by natural wellness
-                and daily oral care traditions.
+                Premium herbal toothpaste inspired by natural wellness and daily
+                oral care traditions.
               </p>
-
               <div className="price">$35</div>
-
               <input
                 type="number"
                 min="0"
@@ -74,22 +57,14 @@ Total: $${total}`
               />
             </div>
 
-            {/* Wolffia Protein */}
             <div className="product-card">
-              <img
-                src="/images/wolffia-protein.jpg"
-                alt="Wolffia Protein"
-              />
-
+              <img src="/images/wolffia-protein.jpg" alt="Wolffia Protein" />
               <h2>Wolffia Protein</h2>
-
               <p>
-                Plant-based superfood protein supplement crafted for
-                wellness, nutrition, and healthy lifestyles.
+                Plant-based superfood protein supplement crafted for wellness,
+                nutrition, and healthy lifestyles.
               </p>
-
               <div className="price">$35</div>
-
               <input
                 type="number"
                 min="0"
@@ -97,18 +72,12 @@ Total: $${total}`
                 onChange={(e) => setProtein(Number(e.target.value))}
               />
             </div>
-
           </div>
         </section>
 
-        {/* ORDER SUMMARY */}
         <section className="checkout-section">
-
           <h2>Order Summary</h2>
-
-          <div className="total">
-            Total: ${total}
-          </div>
+          <div className="total">Total: ${total}</div>
 
           <a
             className="whatsapp-btn"
@@ -130,13 +99,11 @@ Total: $${total}`
               Pay with PayPal
             </a>
           </div>
-
         </section>
 
         <footer>
           © 2026 Eagle International Import & Export LLC
         </footer>
-
       </div>
 
       <style jsx>{`
@@ -147,14 +114,21 @@ Total: $${total}`
         }
 
         .products-section {
-          padding: 60px 40px;
+          padding: 70px 40px;
         }
 
         .title {
-          font-size: 56px;
+          font-size: 68px;
           font-weight: 900;
-          margin-bottom: 50px;
+          letter-spacing: -2px;
+          margin-bottom: 20px;
           color: #000;
+        }
+
+        .subtitle {
+          font-size: 20px;
+          color: #666;
+          margin-bottom: 55px;
         }
 
         .product-grid {
@@ -166,52 +140,60 @@ Total: $${total}`
         .product-card {
           background: white;
           border-radius: 22px;
-          padding: 24px;
+          padding: 28px;
+          text-align: center;
+          border: 1px solid rgba(0,0,0,0.05);
           box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+          transition: 0.3s;
+        }
+
+        .product-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         .product-card img {
           width: 100%;
-          height: 340px;
+          height: 420px;
           object-fit: contain;
-          margin-bottom: 25px;
+          margin-bottom: 28px;
           border-radius: 12px;
         }
 
         .product-card h2 {
-          font-size: 20px;
-          font-weight: 800;
+          font-size: 22px;
+          font-weight: 900;
           margin-bottom: 14px;
         }
 
         .product-card p {
-          font-size: 14px;
-          line-height: 1.5;
-          color: #222;
-          margin-bottom: 18px;
+          font-size: 15px;
+          line-height: 1.7;
+          color: #444;
+          margin-bottom: 20px;
         }
 
         .price {
-          font-size: 30px;
-          font-weight: bold;
+          font-size: 32px;
+          font-weight: 900;
           color: #b8860b;
-          margin-bottom: 14px;
+          margin-bottom: 16px;
         }
 
         input {
           width: 90px;
-          padding: 10px;
-          border-radius: 10px;
+          height: 48px;
+          border-radius: 14px;
           border: 1px solid #ddd;
-          font-size: 16px;
+          font-size: 18px;
           text-align: center;
         }
 
         .checkout-section {
           background: white;
-          margin: 60px auto;
+          margin: 70px auto;
           max-width: 900px;
-          padding: 50px;
+          padding: 55px;
           border-radius: 30px;
           text-align: center;
           box-shadow: 0 10px 30px rgba(0,0,0,0.06);
@@ -223,7 +205,7 @@ Total: $${total}`
         }
 
         .total {
-          font-size: 36px;
+          font-size: 38px;
           font-weight: 900;
           color: #b8860b;
           margin-bottom: 30px;
@@ -232,7 +214,7 @@ Total: $${total}`
         .whatsapp-btn,
         .paypal-btn {
           display: inline-block;
-          padding: 16px 28px;
+          padding: 16px 30px;
           border-radius: 40px;
           text-decoration: none;
           font-weight: bold;
@@ -242,7 +224,7 @@ Total: $${total}`
         }
 
         .whatsapp-btn {
-          background: #25D366;
+          background: #25d366;
         }
 
         .paypal-btn {
@@ -273,16 +255,20 @@ Total: $${total}`
           }
 
           .title {
-            font-size: 38px;
+            font-size: 40px;
           }
 
           .products-section {
-            padding: 40px 20px;
+            padding: 45px 20px;
           }
 
           .checkout-section {
-            margin: 30px 20px;
+            margin: 35px 20px;
             padding: 35px 20px;
+          }
+
+          .product-card img {
+            height: 330px;
           }
         }
       `}</style>
