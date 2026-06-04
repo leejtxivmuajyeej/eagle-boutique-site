@@ -40,7 +40,7 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="/images/shampoo.jpg"
+            src="./images/shampoo.jpg"
             alt="Ginger Shampoo"
             style={styles.image}
           />
@@ -70,7 +70,7 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="/images/toothpaste.jpg"
+            src="./images/toothpaste.jpg"
             alt="Herbal Toothpaste"
             style={styles.image}
           />
@@ -100,7 +100,7 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="/images/protein.jpg"
+            src="./images/protein.jpg"
             alt="Wolffia Protein"
             style={styles.image}
           />
