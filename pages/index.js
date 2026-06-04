@@ -40,9 +40,13 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="./images/shampoo.jpg"
+            src="/images/shampoo.jpg"
             alt="Ginger Shampoo"
             style={styles.image}
+            onError={(e) => {
+              e.target.src =
+                "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9";
+            }}
           />
 
           <h2>Ginger Shampoo</h2>
@@ -70,9 +74,13 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="./images/toothpaste.jpg"
+            src="/images/toothpaste.jpg"
             alt="Herbal Toothpaste"
             style={styles.image}
+            onError={(e) => {
+              e.target.src =
+                "https://images.unsplash.com/photo-1556228720-195a672e8a03";
+            }}
           />
 
           <h2>Herbal Toothpaste</h2>
@@ -100,9 +108,13 @@ export default function Home() {
         <div style={styles.card}>
 
           <img
-            src="./images/protein.jpg"
+            src="/images/protein.jpg"
             alt="Wolffia Protein"
             style={styles.image}
+            onError={(e) => {
+              e.target.src =
+                "https://images.unsplash.com/photo-1512621776951-a57141f2eefd";
+            }}
           />
 
           <h2>Wolffia Protein</h2>
